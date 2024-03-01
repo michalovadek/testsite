@@ -6,26 +6,25 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: #F5F5F5; /* Lighter background */
     color: #333333;
-    text-align: center; /* Center-aligns text */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    text-align: center;
 }
 
 .grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 20px;
     width: 100%;
-    max-width: 960px; /* Adjust based on preference */
+    max-width: 960px;
 }
 
 .profile-img {
-    max-width: 50%;
+    max-width: 60%; /* Making the picture bigger */
     height: auto;
     border-radius: 10px;
 }
@@ -34,32 +33,33 @@ body {
     margin: 20px 0;
 }
 
-.social-links a {
+.social-links a, .highlight, a {
     margin: 0 10px;
-    color: #333333;
+    color: #007bff; /* Professional shade of blue */
     font-size: 20px;
-    transition: color 0.3s ease-in-out;
-}
-
-.social-links a:hover {
-    color: #FFD700; /* Gold color for hover state */
-}
-
-.highlight, a {
-    color: #FFD700; /* Gold color */
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.highlight:hover, a:hover {
-    color: #FFFFFF;
-    transition: color 0.3s ease-in-out;
+.social-links a:hover, .highlight:hover, a:hover {
+    color: #0056b3; /* Darker blue for hover state */
+}
+
+.content-right {
+    text-align: left;
+    max-width: 600px; /* Ensuring text does not extend too far */
 }
 
 @media(max-width:768px) {
-    .grid-layout {
-        grid-template-columns: 1fr;
-    }
     .profile-img {
-        max-width: 70%;
+        max-width: 80%; /* Adjusting size for responsiveness */
+    }
+    .content-right, .social-links a, .highlight, a {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 18px; /* Adjusting for smaller screens */
+    }
+    .social-links, .content-right {
+        text-align: center; /* Centering content for smaller screens */
     }
 }
